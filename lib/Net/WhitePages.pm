@@ -1,13 +1,9 @@
 package Net::WhitePages;
 
-# ----------------------------------------------------------------------
-# $Id: WhitePages.pm 69 2008-04-02 16:05:11Z dlc $
-# ----------------------------------------------------------------------
-
 use strict;
 use vars qw($VERSION);
 
-$VERSION = '1.0';   # $Date: 2008-04-02 12:05:11 -0400 (Wed, 02 Apr 2008) $
+$VERSION = '1.0';
 
 use JSON;
 use LWP::Simple qw($ua get);
