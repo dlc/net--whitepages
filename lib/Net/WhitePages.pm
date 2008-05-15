@@ -3,7 +3,7 @@ package Net::WhitePages;
 use strict;
 use vars qw($VERSION);
 
-$VERSION = '1.0';
+$VERSION = '1.01';
 
 use JSON;
 use LWP::Simple qw($ua get);
@@ -91,7 +91,7 @@ sub _uri {
     my %p = @_;
     my $uri = URI->new(API_BASE . '/' . $meth . '/' . $self->{ API_VERSION });
 
-    $p{'api_key'} = $self->{ API_KEY };
+    $p{'api_key'} = $self->{ TOKEN };
     $p{'outputtype'} = 'JSON';
     $uri->query_form(%p);
 

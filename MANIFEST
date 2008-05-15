@@ -1,5 +1,6 @@
 lib/Net/WhitePages.pm
 Makefile.PL
-MANIFEST			This list of files
+MANIFEST
+MANIFEST.SKIP
 README
 t/load.t
