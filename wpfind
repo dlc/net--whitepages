@@ -98,6 +98,10 @@ if ($opts{'output'} eq 'text') {
             print "\n";
         }
 
+        if ($l->{'business'} && (my $n = $l->{'business'}->{'businessname'})) {
+            print "Business: $n\n";
+        }
+
         if (my $ns = $l->{'phonenumbers'}) {
             print "Phone Numbers: ", join "; ", map { $_->{'fullphone'} } @$ns;
             print "\n";
