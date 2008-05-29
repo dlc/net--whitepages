@@ -4,3 +4,4 @@ MANIFEST
 MANIFEST.SKIP
 README
 t/load.t
+wpfind
