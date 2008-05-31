@@ -91,7 +91,10 @@ sub _uri {
     my %p = @_;
     my $uri = URI->new(API_BASE . '/' . $meth . '/' . $self->{ API_VERSION });
 
-    $p{'api_key'} = $self->{ TOKEN };
+    my $t = $self->{ TOKEN } ||
+        die "No token defined; can't make a request without a token!\n";
+
+    $p{'api_key'} = $t;
     $p{'outputtype'} = 'JSON';
     $uri->query_form(%p);
 
