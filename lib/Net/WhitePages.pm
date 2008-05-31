@@ -176,7 +176,7 @@ Please report bugs via the RT queue at https://rt.cpan.org/.
 
 =head1 VERSION
 
-1.0
+1.02
 
 =head1 AUTHOR
 
