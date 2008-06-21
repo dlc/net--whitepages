@@ -3,7 +3,7 @@ package Net::WhitePages;
 use strict;
 use vars qw($VERSION);
 
-$VERSION = '1.01';
+$VERSION = '1.04';
 
 use LWP::Simple qw($ua get);
 use Params::Validate qw(validate);
