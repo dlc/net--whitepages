@@ -3,9 +3,8 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     'NAME'      => 'Net::WhitePages',
-    'VERSION'   => "1.02",
+    'VERSION'   => "1.03",
     'PREREQ_PM' => {
-        'JSON'              => '0.00',
         'LWP::Simple'       => '0.00',
         'Params::Validate'  => '0.00',
         'URI'               => '0.00',

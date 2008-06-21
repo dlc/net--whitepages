@@ -5,7 +5,6 @@ use vars qw($VERSION);
 
 $VERSION = '1.01';
 
-use JSON;
 use LWP::Simple qw($ua get);
 use Params::Validate qw(validate);
 use URI;
@@ -95,7 +94,7 @@ sub _uri {
         die "No token defined; can't make a request without a token!\n";
 
     $p{'api_key'} = $t;
-    $p{'outputtype'} = 'JSON';
+    $p{'outputtype'} = 'Perl';
     $uri->query_form(%p);
 
     return $uri;
@@ -110,7 +109,7 @@ sub _request {
 
     my $data = get($uri->canonical);
 
-    return jsonToObj($data);
+    return eval($data);
 }
 
 1;
