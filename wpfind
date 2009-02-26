@@ -48,7 +48,7 @@ GetOptions(\%opts,
 # ----------------------------------------------------------------------
 # Start the work
 # ----------------------------------------------------------------------
-my $wp = Net::WhitePages->new(TOKEN => $opts{'token'});
+my $wp = Net::WhitePages->new(TOKEN => $opts{'token'}, DEBUG => $opts{'debug'});
 my $search_method;
 my @search_params;
 
@@ -88,11 +88,13 @@ if ($res->{'result'}->{'type'} eq 'error') {
     exit 9;
 }
 
-print Dumper($res) if $opts{'debug'};
+#print Dumper($res) if $opts{'debug'};
 
 #print "output type = '$opts{'output'}'\n";
 if ($opts{'output'} eq 'text') {
-    for my $l (@{ $res->{'listings'} }) {
+    for (my $i = 0; $i < @{ $res->{'listings'} }; ) {
+        my $l = $res->{'listings'}->[$i];
+
         if ($l->{'people'} && @{ $l->{'people'} }) {
             print "Name: ", join "; ", map { "$_->{'lastname'}, $_->{'firstname'}" } @{ $l->{'people'} };
             print "\n";
@@ -129,6 +131,10 @@ if ($opts{'output'} eq 'text') {
             for my $n (values %$x) {
                 print "$n->{'linktext'}: $n->{'url'}\n";
             }
+        }
+
+        unless (++$i == @{ $res->{'listings'} }) {
+            print "\n";
         }
     }
 }

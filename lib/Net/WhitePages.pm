@@ -19,6 +19,7 @@ sub new {
     $ua->agent("$class/$VERSION (" . $ua->agent . ")");
 
     bless {
+        DEBUG       => 0,
         TOKEN       => $ENV{'WHITEPAGES_TOKEN'},
         API_VERSION => '1.0',
         %$args,
@@ -106,6 +107,10 @@ sub _request {
     my @meth = caller(1);
    (my $meth = $meth[3]) =~ s/.*:://;
     my $uri = $self->_uri($meth, @_);
+
+    if ($self->{ DEBUG }) {
+        warn "[DEBUG] Calling `", $uri->canonical, "'\n";
+    }
 
     my $data = get($uri->canonical);
 

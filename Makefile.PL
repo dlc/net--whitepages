@@ -10,6 +10,6 @@ WriteMakefile(
         'URI'               => '0.00',
 
     },
-    EXE_FILES       => [ qw(wpfind) ],
+    'EXE_FILES'     => [ qw(wpfind) ],
     'AUTHOR'        => 'darren chamberlain <darren@cpan.org>',
 );
