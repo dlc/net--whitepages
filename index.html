@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Net--whitepages : Perl interface to whitepages.com" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Net--whitepages</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/dlc/net--whitepages">View on GitHub</a>
+
+          <h1 id="project_title">Net--whitepages</h1>
+          <h2 id="project_tagline">Perl interface to whitepages.com</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/dlc/net--whitepages/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/dlc/net--whitepages/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>NAME</h1>
+
+<p>Net::WhitePages - A Perl interface to the WhitePages.com API</p>
+
+<h1>SYNOPSIS</h1>
+
+<pre><code>use Net::WhitePages;
+
+my $wp = Net::WhitePages-&gt;new(TOKEN =&gt; "12345");
+my $res = $wp-&gt;find_person(lastname =&gt; "Wall", firstname =&gt; "Larry");
+</code></pre>
+
+<h1>DESCRIPTION</h1>
+
+<p>Net::WhitePages provides a simple perl wrapper for the <a href="http://developer.whitepages.com/">whitepages.com
+API</a>. The interface
+matches the API exactly; see <a href="http://developer.whitepages.com/docs">http://developer.whitepages.com/docs</a> for a
+description of it.</p>
+
+<p>You'll need to have a whitepages.com API token to function; see
+<a href="http://developer.whitepages.com/">http://developer.whitepages.com/</a> for a sign-up link and terms of
+service.</p>
+
+<p>WhitePages.com places strict usage limitations, which this module does
+not attempt to enforce.</p>
+
+<h1>METHODS</h1>
+
+<ul>
+<li>
+<em>find_person</em> - Search by a person's name and location to find the person's complete address and phone number. See http:
+//developer.whitepages.com/docs/Methods/find_person for more details.</li>
+<li>
+<em>reverse_phone</em> - Search by phone number to find the related name and address. See <a href="http://developer.whitepages.com/docs/">http://developer.whitepages.com/docs/</a>
+Methods/reverse_phone for details.</li>
+<li>
+<em>reverse_address</em> - Search by street address to find the related name and phone number. See <a href="http://developer.whitepages">http://developer.whitepages</a>.
+com/docs/Methods/reverse_address for details.</li>
+</ul><p>Each method returns a serialized version of the results data; see
+<a href="http://developer.whitepages.com/docs/docs/Responses/Results_Response">http://developer.whitepages.com/docs/docs/Responses/Results_Response</a> for
+details on it looks like.</p>
+
+<h1>BUGS</h1>
+
+<p>Please report bugs via the RT queue at <a href="https://rt.cpan.org/">https://rt.cpan.org/</a>.</p>
+
+<h1>VERSION</h1>
+
+<p>1.0</p>
+
+<h1>AUTHOR</h1>
+
+<p>Darren Chamberlain <a href="mailto:darren@cpan.org">darren@cpan.org</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Net--whitepages maintained by <a href="https://github.com/dlc">dlc</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
