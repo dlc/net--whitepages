@@ -1,5 +1,5 @@
 NAME
-    Net::WhitePages - A Perl interface to the WhitePages.com API
+    Net::WhitePages - A Perl interface to the WhitePages.com API v1.0
 
 SYNOPSIS
         use Net::WhitePages;
@@ -19,6 +19,9 @@ DESCRIPTION
 
     WhitePages.com places strict usage limitations, which this module does
     not attempt to enforce.
+
+    Note that this currently only works for version 1.0 of the
+    WhitePages.com API.
 
 METHODS
     find_person
@@ -45,7 +48,7 @@ BUGS
     Please report bugs via the RT queue at https://rt.cpan.org/.
 
 VERSION
-    1.0
+    1.05
 
 AUTHOR
     Darren Chamberlain <darren@cpan.org>
