@@ -12,4 +12,11 @@ WriteMakefile(
     },
     'EXE_FILES'     => [ qw(wpfind) ],
     'AUTHOR'        => 'darren chamberlain <darren@cpan.org>',
+    'ABSTRACT_FROM' => 'lib/Net/WhitePages.pm',
+    'clean'         => {
+        'FILES' => '$(DISTVNAME).tar$(SUFFIX) *.ppd'
+    },
+    'dist'          => {
+        PREOP => 'perldoc -t lib/Net/WhitePages.pm > README',
+    }
 );
